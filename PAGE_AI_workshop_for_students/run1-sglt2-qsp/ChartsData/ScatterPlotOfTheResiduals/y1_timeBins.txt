@@ -1,0 +1,3 @@
+bins_values,split
+95.99,All
+96.01,All
