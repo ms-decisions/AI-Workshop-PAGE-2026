@@ -1,2 +1,0 @@
-time,arithmeticMean,sd,split
-96,52.7869,22.4323,All

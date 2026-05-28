@@ -1,0 +1,2 @@
+bins_middles,empirical_median,empirical_lower,empirical_upper,theoretical_median_median_pc,theoretical_median_piLower_pc,theoretical_median_piUpper_pc,theoretical_lower_median_pc,theoretical_lower_piLower_pc,theoretical_lower_piUpper_pc,theoretical_upper_median_pc,theoretical_upper_piLower_pc,theoretical_upper_piUpper_pc,split
+24,56.061,44.488,67.1483,57.8913,53.2752,63.2725,45.9961,38.8421,52.6334,69.8252,64.0622,76.579,All

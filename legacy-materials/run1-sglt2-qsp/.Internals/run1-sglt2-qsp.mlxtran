@@ -1,0 +1,63 @@
+<DATAFILE>
+
+[FILEINFO]
+file='../../../derived-data/ds-sglt2-pd-fit-dapa.csv'
+delimiter = comma
+header={ID, TIME, DV, DVID, DVNAME, ADM, CMT, MDV, EVID, AMT, DOSE, GFR, MPGinitial, kt2d}
+
+[CONTENT]
+ID = {use=identifier}
+TIME = {use=time}
+DV = {use=observation, yname='1', type=continuous}
+DVID = {use=observationtype}
+ADM = {use=administration}
+MDV = {use=missingdependentvariable}
+EVID = {use=eventidentifier}
+AMT = {use=amount}
+GFR = {use=regressor}
+MPGinitial = {use=regressor}
+kt2d = {use=regressor}
+
+[SETTINGS]
+dataType = {'1'=plasma}
+
+<MODEL>
+
+[INDIVIDUAL]
+input = {VmaxreabsSGLT2hs_pop, VmaxreabsSGLT2t2d_pop}
+
+DEFINITION:
+VmaxreabsSGLT2hs = {distribution=logNormal, typical=VmaxreabsSGLT2hs_pop, no-variability}
+VmaxreabsSGLT2t2d = {distribution=logNormal, typical=VmaxreabsSGLT2t2d_pop, no-variability}
+
+[LONGITUDINAL]
+input = {b}
+
+file = '../../../models/model-sglt2-mlxtran-simp.txt'
+
+DEFINITION:
+y1 = {distribution=normal, prediction=UGE, errorModel=proportional(b)}
+
+<FIT>
+data = '1'
+model = y1
+
+<PARAMETER>
+VmaxreabsSGLT2hs_pop = {value=80, method=MLE}
+VmaxreabsSGLT2t2d_pop = {value=110, method=MLE}
+b = {value=0.3, method=MLE}
+c = {value=1, method=FIXED}
+
+<MONOLIX>
+
+[TASKS]
+populationParameters()
+individualParameters(method = none )
+fim(method = StochasticApproximation)
+logLikelihood(method = ImportanceSampling)
+plotResult(method = {indfits, parameterdistribution, covariancemodeldiagnosis, covariatemodeldiagnosis, obspred, vpc, residualsscatter, residualsdistribution, randomeffects, saemresults })
+
+[SETTINGS]
+GLOBAL:
+exportpath = '../'
+

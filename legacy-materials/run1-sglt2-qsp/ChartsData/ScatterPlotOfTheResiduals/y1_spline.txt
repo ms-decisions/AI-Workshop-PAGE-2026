@@ -1,0 +1,3 @@
+time_pwRes,time_pwRes_spline,time_iwRes,time_iwRes_spline,time_npde,time_npde_spline,prediction_pwRes,prediction_pwRes_spline,prediction_iwRes,prediction_iwRes_spline,prediction_npde,prediction_npde_spline,split
+24,-2.16296,24,-2.01942,24,-2.02675,13.9057,0.498523,13.9057,0.554061,13.9057,0.53951,All
+24,2.23584,24,2.28999,24,2.29173,14.4311,0.475245,14.4311,0.530199,14.4311,0.515926,All

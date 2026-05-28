@@ -1,2 +1,0 @@
-time,empirical_median,empirical_lower,empirical_upper,theoretical_median,theoretical_lower,theoretical_upper,theoretical_median_piLower,theoretical_median_piUpper,theoretical_lower_piLower,theoretical_lower_piUpper,theoretical_upper_piLower,theoretical_upper_piUpper,split
-96,-0.334019,-1.32765,0.883718,0,-1.28155,1.28155,-0.520133,0.520133,-1.96707,-0.596029,0.596029,1.96707,All
